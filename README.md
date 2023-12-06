@@ -1,19 +1,19 @@
 # Tamil SMS
 
-![build-test](https://github.com/mskian/next-tamil-sms/workflows/build-test/badge.svg)  
+[![build-test](https://github.com/sanwebinfo/next-tamil-sms/actions/workflows/build.yml/badge.svg)](https://github.com/sanwebinfo/next-tamil-sms/actions/workflows/build.yml) [![vercel-deploy](https://github.com/sanwebinfo/next-tamil-sms/actions/workflows/deploy.yml/badge.svg)](https://github.com/sanwebinfo/next-tamil-sms/actions/workflows/deploy.yml)  
 
-Random Tamil Kavithai Collections - Tamil SMS Blog and kavithai index Database.  
+Random Tamil Kavithai Collections - Tamil SMS kavithai and Kadhal kavithai index Database.  
 
-> Tamil Kavithai index Database - kavithai and kadhal kavithai.  
+> Tamil Kavithai index Database - kavithai and kadhal kavithai Collections.  
 
-⚛ React + Next JS | 🌩 Vercel
+⚛ React + Next JS |📱PWA | 🌩 Vercel  
 
 ## Features 🍔
 
 - React + Next JS
 - Tailwind CSS
 - Power Packed with React and Next Modules
-- Next JS API Router for fetch Kavithai data
+- Next JS API Router for fetching Kavithai data
 - PWA Support
 - Vercel Cache
 
@@ -44,10 +44,6 @@ yarn build
 ```sh
 yarn start
 ```
-
-## Contributing 🙌
-
-Your PR's are Welcome  
 
 ## LICENSE ☑
 

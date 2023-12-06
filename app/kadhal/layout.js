@@ -9,7 +9,7 @@ const BalooThambi = Baloo_Thambi_2({
 export const metadata = {
   title: "Tamil SMS kadhal Kavithai - Kavithai index database",
   description:
-    "Random Tamil Kavithai Collections - Tamil SMS Blog and kavithai index Database.",
+    "Random Tamil Kavithai Collections - Tamil SMS kavithai and Kadhal kavithai index Database.",
 }
 
 export default function RootLayout({ children }) {
