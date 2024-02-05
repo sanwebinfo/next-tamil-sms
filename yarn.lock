@@ -961,10 +961,10 @@
     "@babel/helper-validator-identifier" "^7.22.20"
     to-fast-properties "^2.0.0"
 
-"@ducanh2912/next-pwa@^10.2.3":
-  version "10.2.3"
-  resolved "https://registry.yarnpkg.com/@ducanh2912/next-pwa/-/next-pwa-10.2.3.tgz#138ff99e3b13b66f7f0a117c6d1cb3d11ab962aa"
-  integrity sha512-Bdn7zCRFKhSCyrlqKzjFi7Y3/1F+z3PPHsPOhqsMo9H0cVybaDjlLxr6E9SiTy9K0fx2//8QPuEHGZof/UmVoA==
+"@ducanh2912/next-pwa@^10.2.5":
+  version "10.2.5"
+  resolved "https://registry.yarnpkg.com/@ducanh2912/next-pwa/-/next-pwa-10.2.5.tgz#7f175300a942ceb2d55d078e98a83ccbdafb4794"
+  integrity sha512-DkF0IUNBjJ2eOQ/lxDuEtT7oIfLIcOE6HthM5ESkZBLq9P05O2PEhaIpOLARPF9RNXlvBBJxX0sJNUeVehMTIw==
   dependencies:
     clean-webpack-plugin "4.0.0"
     fast-glob "3.3.2"
