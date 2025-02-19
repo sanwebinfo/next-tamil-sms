@@ -4,78 +4,66 @@ import { useState, useEffect } from "react"
 import toast, { Toaster } from "react-hot-toast"
 import { CopyToClipboard } from "react-copy-to-clipboard"
 
-export default function Index2() {
-  const [content, setContent] = useState("Updating kavithai")
-  const fetchWord = async () => {
-    const response = await fetch("/api/kadhal")
-    const data = await response.json()
-    setContent(data[0].content)
+export default function LoveQuotes() {
+  const [quote, setQuote] = useState("Fetching kavithai...")
+
+  const fetchQuote = async () => {
+    try {
+      const response = await fetch("/api/kadhal")
+      const data = await response.json()
+      setQuote(data[0]?.content || "Kavithai not found")
+    } catch (error) {
+      setQuote("Failed to fetch kavithai")
+    }
   }
-  const copied = () => {
-    toast.success("Copied")
+
+  const handleCopy = () => {
+    toast.success("Copied to clipboard!")
   }
-  let Displayscore
-  if (content === undefined) {
-    Displayscore = (
-      <p className="text-gray-800 text-base tracking-tight break-all">
-        Kavithai Data Not Found
-      </p>
-    )
-  } else {
-    Displayscore = (
-      <div>
-        <p
-          className="text-gray-800 text-base tracking-tight break-all"
-          dangerouslySetInnerHTML={{ __html: content }}
-        />
-      </div>
-    )
-  }
-  let Displaybutton
-  if (content === null) {
-    Displaybutton = ""
-  } else {
-    Displaybutton = (
-      <button
-        className="bg-green-400 text-black font-medium py-2 px-4 rounded-full mt-4 border shadow-md border-cyan-900"
-        type="button"
-        onClick={() => fetchWord()}
-      >
-        ▶
-      </button>
-    )
-  }
+
   useEffect(() => {
-    fetchWord()
+    fetchQuote()
   }, [])
 
   return (
-    <div className="min-h-screen bg-gray-800">
-      <div className="container mx-auto px-4">
-        <div className="flex h-screen flex-col justify-center items-center flex-nowrap">
-          <div className="shadow-xl w-fit flex flex-col flex-nowrap justify-center items-center bg-yellow-200 rounded-lg border border-cyan-900 mb-8 py-12 px-8">
-            {Displayscore}
-          </div>
-          <div className="flex items-center justify-center">
-            <Toaster position="top-center" reverseOrder={false} />
-            <CopyToClipboard text={content.replace(/<br \/>/g, "\n")}>
-              <button
-                className="bg-green-400 text-black font-medium py-2 px-4 rounded-full mt-4 border shadow-md border-cyan-900"
-                onClick={copied}
-              >
-                📝
-              </button>
-            </CopyToClipboard>
-            &nbsp;
-            {Displaybutton}
-          </div>
-          <br />
-          <div className="flex items-center justify-center">
-            <a className="font-semibold text-teal-50" href="/">
-              👉 கவிதை Collections 👈
-            </a>
-          </div>
-        </div>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-pink-50 to-red-100 px-6 py-12">
+      <Toaster position="top-center" reverseOrder={false} />
+
+      {/* Quote Card */}
+      <div className="w-full max-w-md bg-white shadow-xl rounded-2xl p-6 text-center border border-pink-300">
+        <p
+          className="text-base font-medium text-gray-900 leading-relaxed"
+          dangerouslySetInnerHTML={{ __html: quote }}
+        />
+      </div>
+
+      {/* Action Buttons */}
+      <div className="mt-6 flex space-x-4">
+        <CopyToClipboard text={quote.replace(/<br \/>/g, "\n")}>
+          <button
+            className="flex items-center gap-2 bg-blue-500 text-white text-sm font-medium px-5 py-2.5 rounded-full shadow-md hover:bg-blue-600 active:scale-95 transition"
+            onClick={handleCopy}
+          >
+            📋 Copy
+          </button>
+        </CopyToClipboard>
+
+        <button
+          className="flex items-center gap-2 bg-green-500 text-white text-sm font-medium px-5 py-2.5 rounded-full shadow-md hover:bg-green-600 active:scale-95 transition"
+          onClick={fetchQuote}
+        >
+          🔄 Next
+        </button>
+      </div>
+
+      {/* Footer Link */}
+      <div className="mt-8">
+        <a
+          href="/"
+          className="text-red-600 font-medium text-sm hover:underline"
+        >
+          👉 கவிதை Collections 👈
+        </a>
       </div>
     </div>
   )
