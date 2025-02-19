@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Link from "next/link"
 import toast, { Toaster } from "react-hot-toast"
 import { CopyToClipboard } from "react-copy-to-clipboard"
 
@@ -56,14 +57,11 @@ export default function QuotesApp() {
         </button>
       </div>
 
-      {/* Footer Link */}
+      {/* Footer Link (FIXED) */}
       <div className="mt-8">
-        <a
-          href="/kadhal"
-          className="text-red-600 font-medium text-sm hover:underline"
-        >
+        <Link href="/kadhal" className="text-red-600 font-medium text-sm hover:underline">
           👉 காதல் கவிதைகள் 👈
-        </a>
+        </Link>
       </div>
     </div>
   )

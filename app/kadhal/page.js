@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Link from "next/link"
 import toast, { Toaster } from "react-hot-toast"
 import { CopyToClipboard } from "react-copy-to-clipboard"
 
@@ -58,12 +59,9 @@ export default function LoveQuotes() {
 
       {/* Footer Link */}
       <div className="mt-8">
-        <a
-          href="/"
-          className="text-red-600 font-medium text-sm hover:underline"
-        >
-          👉 கவிதை Collections 👈
-        </a>
+      <Link href="/" className="text-red-600 font-medium text-sm hover:underline">
+          👉 காதல் Collections 👈
+        </Link>
       </div>
     </div>
   )
