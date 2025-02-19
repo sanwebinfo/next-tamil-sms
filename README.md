@@ -17,7 +17,6 @@ Random Tamil Kavithai Collections - Tamil SMS kavithai and Kadhal kavithai index
 - Power Packed with React and Next Modules
 - Next JS API Router for fetching Kavithai data
 - PWA Support
-- Vercel Cache
 
 ## Installation 📦
 
@@ -26,25 +25,25 @@ Random Tamil Kavithai Collections - Tamil SMS kavithai and Kadhal kavithai index
 ```sh
 git clone https://github.com/mskian/next-tamil-sms
 cd next-tamil-sms
-yarn
+pnpm install
 ```
 
 - Test the site
 
 ```sh
-yarn dev
+pnpm dev
 ```
 
 - Build the site
 
 ```sh
-yarn build
+pnpm build
 ```
 
 - Test the production Build on Localhost
 
 ```sh
-yarn start
+pnpm start
 ```
 
 ## LICENSE ☑
